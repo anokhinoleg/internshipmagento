@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Skywalker_Internship>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Skywalker_Internship>
+    </modules>
+</config>

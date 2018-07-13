@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <internship_index_index>
+        <reference name="content">
+            <block type="internship/view" name="internship"/>
+        </reference>
+    </internship_index_index>
+    <internship_index_homepage>
+        <block type="internship/whatever_main" name="internship" template="skywalker/internship/homepage.phtml"/>
+    </internship_index_homepage>
+</layout>

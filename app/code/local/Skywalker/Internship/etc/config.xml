@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Skywalker_Internship>
+            <version>0.1.0</version>
+        </Skywalker_Internship>
+    </modules>
+    <frontend>
+        <routers>
+            <internship>
+                <use>standard</use>
+                <args>
+                    <module>Skywalker_Internship</module>
+                    <frontName>hello</frontName>
+                </args>
+            </internship>
+        </routers>
+        <layout>
+            <updates>
+                <internship>
+                    <file>internship/index.xml</file>
+                </internship>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <internship>
+                <class>Skywalker_Internship_Block</class>
+            </internship>
+        </blocks>
+    </global>
+</config>
