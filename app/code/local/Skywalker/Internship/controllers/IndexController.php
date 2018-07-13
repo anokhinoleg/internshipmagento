@@ -15,12 +15,7 @@ class Skywalker_Internship_IndexController extends Mage_Core_Controller_Front_Ac
 
     public function homepageAction()
     {
-        $update = $this->getLayout()->getUpdate();
-        $update->addHandle('internship_index_homepage');
-        $this->addActionLayoutHandles();
-        $this->loadLayoutUpdates();
-        $this->generateLayoutXml();
-        $this->generateLayoutBlocks();
-        $this->_isLayoutLoaded = true;
+        $this->loadLayout();
+        $this->renderLayout();
     }
 }

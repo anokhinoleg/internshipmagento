@@ -6,6 +6,8 @@
         </reference>
     </internship_index_index>
     <internship_index_homepage>
-        <block type="internship/whatever_main" name="internship" template="skywalker/internship/homepage.phtml"/>
+        <reference name="content">
+            <block type="internship/whatever_main" name="internship" template="skywalker/internship/homepage.phtml"/>
+        </reference>
     </internship_index_homepage>
 </layout>
