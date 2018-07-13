@@ -1,0 +1,14 @@
+a:5:{i:0;s:593:"Error in file: "/home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/sql/core_setup/install-1.6.0.0.php" - SQLSTATE[42000]: Syntax error or access violation: 1142 CREATE command denied to user 'magento'@'localhost' for table 'core_resource', query was: CREATE TABLE `core_resource` (
+  `code` varchar(50) NOT NULL COMMENT 'Resource Code' ,
+  `version` varchar(50) NULL COMMENT 'Resource Version' ,
+  `data_version` varchar(50) NULL COMMENT 'Data Version' ,
+  PRIMARY KEY (`code`)
+) COMMENT='Resources' ENGINE=INNODB charset=utf8 COLLATE=utf8_general_ci";i:1;s:1312:"#0 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.6.0.6')
+#2 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.6.0.6')
+#3 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/App.php(428): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/code/core/Mage/Core/Model/App.php(354): Mage_Core_Model_App->_initModules()
+#6 /home/skywalker/Development/web/projects/study/internshipmage/magento/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 /home/skywalker/Development/web/projects/study/internshipmage/magento/index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:1:"/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}
