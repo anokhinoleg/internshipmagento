@@ -29,5 +29,27 @@
                 <class>Skywalker_Internship_Block</class>
             </internship>
         </blocks>
+        <models>
+            <internship>
+                <class>Skywalker_Internship_Model</class>
+                <resourceModel>internship_resource</resourceModel>
+            </internship>
+            <internship_resource>
+                <class>Skywalker_Internship_Model_Resource</class>
+                <entities>
+                    <contact>
+                        <table>contact</table>
+                    </contact>
+                </entities>
+            </internship_resource>
+        </models>
+        <resources>
+            <internship_setup>
+                <setup>
+                    <module>Skywalker_Internship</module>
+                    <class>Skywalker_Internship_Model_Resource_Setup</class>
+                </setup>
+            </internship_setup>
+        </resources>
     </global>
 </config>

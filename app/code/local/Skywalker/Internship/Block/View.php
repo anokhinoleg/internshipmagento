@@ -8,8 +8,13 @@
 
 class Skywalker_Internship_Block_View extends Mage_Core_Block_Template
 {
-    protected function _toHtml()
+    public function getContacts()
     {
-        return 'Hello';
+        return Mage::getModel('internship/contact')->getCollection();
+    }
+
+    public function getComments()
+    {
+        return Mage::getModel('internship/comments')->getCollection();
     }
 }

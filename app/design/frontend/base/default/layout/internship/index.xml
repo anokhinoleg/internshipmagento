@@ -2,7 +2,7 @@
 <layout>
     <internship_index_index>
         <reference name="content">
-            <block type="internship/view" name="internship"/>
+            <block type="internship/view" name="internship" template="skywalker/internship/homepage.phtml"/>
         </reference>
     </internship_index_index>
     <internship_index_homepage>
