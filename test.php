@@ -8,3 +8,4 @@ Mage::app('admin')->setUseSessionInUrl(false);
 umask(0);
 
 echo "Hello world!";
+echo phpinfo();
