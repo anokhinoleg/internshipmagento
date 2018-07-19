@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Skywalker_Internship>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Skywalker_Internship>
     </modules>
     <frontend>
@@ -40,6 +40,9 @@
                     <contact>
                         <table>contact</table>
                     </contact>
+                    <comment>
+                        <table>comment</table>
+                    </comment>
                 </entities>
             </internship_resource>
         </models>

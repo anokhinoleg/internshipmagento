@@ -15,6 +15,6 @@ class Skywalker_Internship_Block_View extends Mage_Core_Block_Template
 
     public function getComments()
     {
-        return Mage::getModel('internship/comments')->getCollection();
+        return Mage::getModel('internship/comment')->getCollection();
     }
 }

@@ -3,9 +3,11 @@
 ?>
 <?php
     $contacts = $this->getContacts();
+    $comments = $this->getComments();
 ?>
 <ul>
     <?php foreach ($contacts as $contact) : ?>
+        <div><?php var_dump($contact); ?></div>
         <li><?= $contact->getName(); ?></li>
     <?php endforeach; ?>
 </ul>
