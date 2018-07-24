@@ -2,12 +2,19 @@
 /** @var Skywalker_Internship_Block_View $this */
 ?>
 <?php
-    $contacts = $this->getContacts();
     $comments = $this->getComments();
 ?>
 <ul>
-    <?php foreach ($contacts as $contact) : ?>
-        <div><?php var_dump($contact); ?></div>
-        <li><?= $contact->getName(); ?></li>
+    <?php foreach ($comments as $comment) : ?>
+        <?php $authorId = $comment->getAuthorId(); ?>
+        <li>
+            <div style="padding: 20px;">
+                <p><?= $comment->getText(); ?></p>
+                <p style="display: flex; justify-content: space-between;">
+                    <span><?= $comment->getAuthorById($authorId); ?></span>
+                    <time><?= $comment->getDate(); ?></time>
+                </p>
+            </div>
+        </li>
     <?php endforeach; ?>
 </ul>

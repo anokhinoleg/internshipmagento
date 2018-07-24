@@ -12,4 +12,9 @@ class Skywalker_Internship_Model_Comment extends Mage_Core_Model_Abstract
     {
         $this->_init('internship/comment');
     }
+
+    public function getAuthorById($id)
+    {
+        return Mage::getModel('internship/contact')->load($id)->getName();
+    }
 }
