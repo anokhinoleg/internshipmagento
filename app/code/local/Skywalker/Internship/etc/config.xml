@@ -55,4 +55,15 @@
             </internship_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <internship before="Mage_Adminhtml">Skywalker_Internship_Adminhtml</internship>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <comment>
+                    <sort_order>100</sort_order>
+                    <title>Comments</title>
+                    <action>adminhtml/comment/list</action>
+                </comment>
+            </children>
+        </cms>
+    </menu>
+</config>

@@ -6,12 +6,11 @@
 ?>
 <ul>
     <?php foreach ($comments as $comment) : ?>
-        <?php $authorId = $comment->getAuthorId(); ?>
         <li>
             <div style="padding: 20px;">
                 <p><?= $comment->getText(); ?></p>
                 <p style="display: flex; justify-content: space-between;">
-                    <span><?= $comment->getAuthorById($authorId); ?></span>
+                    <span><?= $comment->getAuthor()->getName(); ?></span>
                     <time><?= $comment->getDate(); ?></time>
                 </p>
             </div>
