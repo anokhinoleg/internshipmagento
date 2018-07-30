@@ -34,7 +34,7 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
         $model = Mage::registry('comment');
 
         $form = new Varien_Data_Form(
-            ['id' => 'edit_form', 'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))), 'method' => 'post',]
+            ['id' => 'edit_form', 'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))), 'method' => 'post', 'enctype' => 'multipart/form-data']
         );
 
         $form->setHtmlIdPrefix('block_');
@@ -44,17 +44,19 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
             'class' => 'fieldset-wide'
         ]);
 
-        if ($model->getBlockId()) {
+        if ($model->getId()) {
             $fieldset->addField('id', 'hidden', [
                 'name' => 'id',
             ]);
         }
 
-        $fieldset->addField('text', 'text', [
+        $fieldset->addField('text', 'editor', [
             'name'     => 'text',
             'label'    => 'Message',
             'title'    => 'Message',
             'required' => true,
+            'style'    => 'height:36em',
+            'config'   => Mage::getSingleton('cms/wysiwyg_config')->getConfig(),
         ]);
 
         $fieldset->addField('date', 'text', [
@@ -71,10 +73,15 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
             'required' => true,
         ]);
 
+        $fieldset->addField('upload_file', 'file', array(
+            'label'     => 'File',
+            'required'  => false,
+            'name'      => 'upload_file',
+        ));
 //        $fieldset->addField('comment', 'editor', [
 //            'name'     => 'comment',
-//            'label'    => Mage::helper('techtalk')->__('Comment'),
-//            'title'    => Mage::helper('techtalk')->__('Comment'),
+//            'label'    => 'Comment',
+//            'title'    => 'Comment',
 //            'style'    => 'height:36em',
 //            'required' => true,
 //            'config'   => Mage::getSingleton('cms/wysiwyg_config')->getConfig(),

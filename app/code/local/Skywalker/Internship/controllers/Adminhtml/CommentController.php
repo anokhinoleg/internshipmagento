@@ -69,10 +69,20 @@ class Skywalker_Internship_Adminhtml_CommentController extends Mage_Adminhtml_Co
 
     public function saveAction()
     {
+//        echo phpinfo();
         if ($this->getRequest()->getPost()) {
+            if (isset($_FILES['upload_file']['name']) && $_FILES['upload_file']['name'] != '') {
+                $uploader = new Varien_File_Uploader('upload_file');
+                $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png', 'txt'));
+                $uploader->setAllowRenameFiles(false);
+                $uploader->setFilesDispersion(false);
+                $path = Mage::getBaseDir('media') . DS . 'upload' . DS;
+                $fileName = $_FILES['upload_file']['name'];
+                $uploader->save($path, $fileName);
+            }
             $postData = $this->getRequest()->getPost();
             $comment = $this->getRequest()->getParam('id') !== NULL ? Mage::getModel('internship/comment')->load($this->getRequest()->getParam('id')) : Mage::getModel('internship/comment');
-            $comment->addData($postData)
+            $comment->setData($postData)
                 ->save();
             Mage::getSingleton('adminhtml/session')->addSuccess('Successfully saved');
             $this->_redirect('*/*/list');
