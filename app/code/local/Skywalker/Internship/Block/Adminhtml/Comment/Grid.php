@@ -21,7 +21,7 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Grid extends Mage_Adminhtml_B
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('internship/comment')->getCollection();
-
+        $collection->showAuthor();
         $this->setCollection($collection);
         parent::_prepareCollection();
 
@@ -52,7 +52,7 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Grid extends Mage_Adminhtml_B
         $this->addColumn('author_id', [
             'header' => 'Author',
             'type'   => 'text',
-            'index'  => 'author_id',
+            'index'  => 'name',
         ]);
 
         $this->addExportType('*/*/exportCsv', 'CSV');

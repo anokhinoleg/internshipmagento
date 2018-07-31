@@ -12,4 +12,13 @@ class Skywalker_Internship_Model_Contact extends Mage_Core_Model_Abstract
     {
         $this->_init('internship/contact');
     }
+
+    public function getOptionArray()
+    {
+        $array = [];
+        foreach ($this->getCollection() as $item) {
+            $array[$item->getId()] = $item->getName();
+        }
+        return $array;
+    }
 }

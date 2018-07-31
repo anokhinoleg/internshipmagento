@@ -32,6 +32,7 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
     protected function _prepareForm()
     {
         $model = Mage::registry('comment');
+//        var_dump($model->getAuthor()->getCollection());
 
         $form = new Varien_Data_Form(
             ['id' => 'edit_form', 'action' => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))), 'method' => 'post', 'enctype' => 'multipart/form-data']
@@ -66,11 +67,12 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
             'required' => true,
         ]);
 
-        $fieldset->addField('author_id', 'text', [
+        $fieldset->addField('author_id', 'select', [
             'name'     => 'author_id',
             'label'    => 'Author',
             'title'    => 'Author',
             'required' => true,
+            'options' => $model->getAuthor()->getOptionArray()
         ]);
 
         $fieldset->addField('upload_file', 'file', array(
@@ -78,14 +80,6 @@ class Skywalker_Internship_Block_Adminhtml_Comment_Edit_Form extends Mage_Adminh
             'required'  => false,
             'name'      => 'upload_file',
         ));
-//        $fieldset->addField('comment', 'editor', [
-//            'name'     => 'comment',
-//            'label'    => 'Comment',
-//            'title'    => 'Comment',
-//            'style'    => 'height:36em',
-//            'required' => true,
-//            'config'   => Mage::getSingleton('cms/wysiwyg_config')->getConfig(),
-//        ]);
 
         $form->setValues($model->getData());
         $form->setUseContainer(true);
