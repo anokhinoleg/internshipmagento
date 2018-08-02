@@ -25,9 +25,9 @@
                 <prepare>true</prepare>
             </action>
         </reference>
-        <reference name="footer">
-            <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
-        </reference>
+        <!--<reference name="footer">-->
+            <!--<block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>-->
+        <!--</reference>-->
     </default>
 
     <!--test-->
