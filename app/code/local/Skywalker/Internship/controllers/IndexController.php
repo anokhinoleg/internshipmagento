@@ -18,4 +18,9 @@ class Skywalker_Internship_IndexController extends Mage_Core_Controller_Front_Ac
         $this->loadLayout();
         $this->renderLayout();
     }
+
+    public function helloAction() {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
 }

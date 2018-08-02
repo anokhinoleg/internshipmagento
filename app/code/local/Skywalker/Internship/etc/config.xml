@@ -54,6 +54,11 @@
                 </setup>
             </internship_setup>
         </resources>
+        <helpers>
+            <internship>
+                <class>Skywalker_Internship_Helper</class>
+            </internship>
+        </helpers>
     </global>
     <admin>
         <routers>
