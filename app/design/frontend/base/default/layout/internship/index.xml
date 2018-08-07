@@ -5,30 +5,25 @@
             <block type="internship/view" name="internship" template="skywalker/internship/homepage.phtml">
                 <action method="setData">
                     <key>class</key>
-                    <value>lol</value>
+                    <value>internship-class</value>
                 </action>
                 <block type="internship/view" name="internship.map" template="skywalker/internship/googlemap.phtml"/>
             </block>
         </reference>
-    </internship_index_index>
-    <default>
-        <reference name="footer_links2">
-            <action
-                    method="addLink"
-                    translate="label title"
-                    module="contacts"
-                    ifconfig="contacts/contacts/enabled"
-            >
-                <label>My page</label>
-                <url>hello</url>
-                <title>My page</title>
-                <prepare>true</prepare>
+        <reference name="content">
+            <block type="cms/block" name="google_map">
+                <action method="setBlockId"><block_id>google_map</block_id></action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/internship_styles.css</file>
+                <params/>
+                <if><![CDATA[<!--[]><!-->]]></if>
             </action>
         </reference>
-        <!--<reference name="footer">-->
-            <!--<block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>-->
-        <!--</reference>-->
-    </default>
+    </internship_index_index>
 
     <!--test-->
     <internship_index_homepage>
@@ -39,5 +34,4 @@
         </reference>
     </internship_index_homepage>
     <!--test-->
-
 </layout>

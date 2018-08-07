@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <remove name="right.poll"/>
+        <reference name="footer_links">
+            <action method="removeLinkByUrl">
+                <url helper="internship/getContactsUrl" />
+            </action>
+        </reference>
+        <reference name="footer_links2">
+            <action
+                    method="addLink"
+                    translate="label title"
+                    module="contacts"
+                    ifconfig="contacts/contacts/enabled"
+            >
+                <label>My page</label>
+                <url>hello</url>
+                <title>My page</title>
+                <prepare>true</prepare>
+            </action>
+        </reference>
+        <!--<reference name="footer">-->
+        <!--<block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>-->
+        <!--</reference>-->
+    </default>
+</layout>

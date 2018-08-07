@@ -4,6 +4,7 @@
 <?php
     $comments = $this->getComments();
 ?>
+
 <ul>
     <?php foreach ($comments as $comment) : ?>
         <li>
@@ -20,3 +21,7 @@
 <div class="<?= $this->getData('class'); ?>">
     <?php echo $this->getChildHtml('internship.map'); ?>
 </div>
+<div class="map">
+    <?php echo $this->getChildHtml('google_map'); ?>
+</div>
+
