@@ -59,6 +59,16 @@
                 <class>Skywalker_Internship_Helper</class>
             </internship>
         </helpers>
+        <events>
+            <core_abstract_save_before>
+                <observers>
+                    <observer_to_add_string>
+                        <class>internship/observer</class>
+                        <method>addStringToTheBottom</method>
+                    </observer_to_add_string>
+                </observers>
+            </core_abstract_save_before>
+        </events>
     </global>
     <admin>
         <routers>
