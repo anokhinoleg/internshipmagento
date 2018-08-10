@@ -10,6 +10,6 @@ class Skywalker_InternshipBlog_Model_Resource_PostCategory extends Mage_Core_Mod
 {
     protected function _construct()
     {
-        $this->_init('internshipblog/post_category', 'id');
+        $this->_init('internshipblog/postCategory', 'id');
     }
 }

@@ -15,8 +15,20 @@
                 </args>
             </internshipblog>
         </routers>
+        <layout>
+            <updates>
+                <internshipblog>
+                    <file>internshipblog/blog.xml</file>
+                </internshipblog>
+            </updates>
+        </layout>
     </frontend>
     <global>
+        <blocks>
+            <internshipblog>
+                <class>Skywalker_InternshipBlog_Block</class>
+            </internshipblog>
+        </blocks>
         <models>
             <internshipblog>
                 <class>Skywalker_InternshipBlog_Model</class>
@@ -28,9 +40,9 @@
                     <post>
                         <table>post</table>
                     </post>
-                    <post_category>
+                    <postCategory>
                         <table>post_category</table>
-                    </post_category>
+                    </postCategory>
                 </entities>
             </internshipblog_resource>
         </models>
@@ -43,4 +55,15 @@
             </internshipblog_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <internshipblog before="Mage_Adminhtml">Skywalker_InternshipBlog_Adminhtml</internshipblog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

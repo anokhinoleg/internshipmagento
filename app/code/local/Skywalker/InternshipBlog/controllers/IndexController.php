@@ -10,8 +10,6 @@ class Skywalker_InternshipBlog_IndexController extends Mage_Core_Controller_Fron
 {
     public function indexAction()
     {
-        $blogpost = Mage::getModel('internshipblog/blogpost');
-        echo get_class($blogpost);
         $this->loadLayout();
         $this->renderLayout();
     }

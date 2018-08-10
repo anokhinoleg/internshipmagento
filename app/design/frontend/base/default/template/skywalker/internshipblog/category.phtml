@@ -1,0 +1,22 @@
+<?php
+/** @var Skywalker_InternshipBlog_Block_Category $this */
+?>
+<?php
+$categories = $this->getCategories();
+?>
+<h1>Post's categories</h1>
+<div class="category">
+    <ul>
+    <?php foreach ($categories as $category): ?>
+        <li><a href="
+            <?= Mage::getUrl(
+                    '*/post/list',
+                    [
+                        'category'=> $category->getId()
+                    ]);
+            ?>
+        "><?= $category->getName(); ?></a></li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+

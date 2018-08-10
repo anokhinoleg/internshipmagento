@@ -1,0 +1,18 @@
+<?php
+/** @var Skywalker_InternshipBlog_Block_Post_List $this */
+?>
+<?php $posts = $this->getPosts(); ?>
+<h1>Posts</h1>
+<ul>
+    <?php foreach ($posts as $post) : ?>
+        <li><a href="
+            <?= Mage::getUrl(
+                    '*/*/show',
+                    [
+                        'id' => $post->getId()
+                    ]);
+            ?>
+            "><?= $post->getShortDescription(); ?></a></li>
+    <?php endforeach; ?>
+</ul>
+

@@ -10,7 +10,7 @@ class Skywalker_InternshipBlog_Model_Resource_PostCategory_Collection extends Ma
 {
     protected function _construct()
     {
-        $this->_init('internshipblog/post_category');
+        $this->_init('internshipblog/postCategory');
     }
 
 //    public function showAuthor()

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <internshipblog_index_index>
+        <reference name="content">
+            <block type="internshipblog/category" name="internshipblog" template="skywalker/internshipblog/category.phtml"/>
+        </reference>
+    </internshipblog_index_index>
+    <internshipblog_post_list>
+        <reference name="content">
+            <block type="internshipblog/post_list" name="internshipblog" template="skywalker/internshipblog/post/list.phtml"/>
+        </reference>
+    </internshipblog_post_list>
+    <internshipblog_post_show>
+        <reference name="content">
+            <block type="internshipblog/post_show" name="internshipblog" template="skywalker/internshipblog/post/show.phtml"/>
+        </reference>
+    </internshipblog_post_show>
+</layout>

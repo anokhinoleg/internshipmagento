@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <post>
+                    <sort_order>100</sort_order>
+                    <title>Posts</title>
+                    <action>adminhtml/post/list</action>
+                </post>
+                <postcategory>
+                    <sort_order>100</sort_order>
+                    <title>Post's Categories</title>
+                    <action>adminhtml/postCategory/list</action>
+                </postcategory>
+            </children>
+        </cms>
+    </menu>
+</config>
