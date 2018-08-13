@@ -36,8 +36,7 @@ class Skywalker_InternshipBlog_Adminhtml_PostCategoryController extends Mage_Adm
 
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('id');
-        $model = Mage::getModel('internshipblog/post');
-        var_dump($model);
+        $model = Mage::getModel('internshipblog/postCategory');
         // 2. Initial checking
         if ($id) {
             $model->load($id);
@@ -57,19 +56,18 @@ class Skywalker_InternshipBlog_Adminhtml_PostCategoryController extends Mage_Adm
         }
 
         // 4. Register model to use later in blocks
-        Mage::register('post', $model);
+        Mage::register('postCategory', $model);
 
         // 5. Build edit form
         $this->loadLayout();
-        $this->_addContent($this->getLayout()->createBlock('internshipblog/adminhtml_post_edit'));
-        $this->_setActiveMenu('cms/post')
+        $this->_addContent($this->getLayout()->createBlock('internshipblog/adminhtml_postCategory_edit'));
+        $this->_setActiveMenu('cms/postCategory')
 //            ->_addBreadcrumb($id ? Mage::helper('techtalk')->__('Edit Request') : Mage::helper('techtalk')->__('New Request'), $id ? Mage::helper('techtalk')->__('Edit Request') : Mage::helper('techtalk')->__('New Request'))
             ->renderLayout();
     }
 
     public function saveAction()
     {
-//        echo phpinfo();
         if ($this->getRequest()->getPost()) {
             if (isset($_FILES['upload_file']['name']) && $_FILES['upload_file']['name'] != '') {
                 $uploader = new Varien_File_Uploader('upload_file');
@@ -78,12 +76,16 @@ class Skywalker_InternshipBlog_Adminhtml_PostCategoryController extends Mage_Adm
                 $uploader->setFilesDispersion(false);
                 $path = Mage::getBaseDir('media') . DS . 'upload' . DS;
                 $fileName = $_FILES['upload_file']['name'];
+
                 $uploader->save($path, $fileName);
             }
+
             $postData = $this->getRequest()->getPost();
-            $comment = $this->getRequest()->getParam('id') !== NULL ? Mage::getModel('internshipblog/post')->load($this->getRequest()->getParam('id')) : Mage::getModel('internshipblog/post');
-            $comment->setData($postData)
-                ->save();
+            $category = $this->getRequest()->getParam('id') !== NULL ? Mage::getModel('internshipblog/postCategory')->load($this->getRequest()->getParam('id')) : Mage::getModel('internshipblog/postCategory');
+
+            $category->setData($postData);
+            $category->setData('image',$fileName);
+            $category->save();
             Mage::getSingleton('adminhtml/session')->addSuccess('Successfully saved');
             $this->_redirect('*/*/list');
         }
@@ -91,13 +93,13 @@ class Skywalker_InternshipBlog_Adminhtml_PostCategoryController extends Mage_Adm
 
     public function deleteAction()
     {
-        $comment = Mage::getModel('internshipblog/post')->load($this->getRequest()->getParam('id'));
-        if ($comment->isEmpty()) {
+        $category = Mage::getModel('internshipblog/postCategory')->load($this->getRequest()->getParam('id'));
+        if ($category->isEmpty()) {
             $this->norouteAction();
             return;
         }
-        $comment = Mage::getModel('internshipblog/post')->load($this->getRequest()->getParam('id'));
-        $comment->delete();
+        $category = Mage::getModel('internshipblog/postCategory')->load($this->getRequest()->getParam('id'));
+        $category->delete();
         Mage::getSingleton('adminhtml/session')->addSuccess('Successfully deleted');
         $this->_redirect('*/*/list');
     }

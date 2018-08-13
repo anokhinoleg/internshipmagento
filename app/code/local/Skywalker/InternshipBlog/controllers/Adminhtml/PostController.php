@@ -37,7 +37,7 @@ class Skywalker_InternshipBlog_Adminhtml_PostController extends Mage_Adminhtml_C
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('id');
         $model = Mage::getModel('internshipblog/post');
-        var_dump($model);
+
         // 2. Initial checking
         if ($id) {
             $model->load($id);
@@ -81,8 +81,8 @@ class Skywalker_InternshipBlog_Adminhtml_PostController extends Mage_Adminhtml_C
                 $uploader->save($path, $fileName);
             }
             $postData = $this->getRequest()->getPost();
-            $comment = $this->getRequest()->getParam('id') !== NULL ? Mage::getModel('internshipblog/post')->load($this->getRequest()->getParam('id')) : Mage::getModel('internshipblog/post');
-            $comment->setData($postData)
+            $post = $this->getRequest()->getParam('id') !== NULL ? Mage::getModel('internshipblog/post')->load($this->getRequest()->getParam('id')) : Mage::getModel('internshipblog/post');
+            $post->setData($postData)
                 ->save();
             Mage::getSingleton('adminhtml/session')->addSuccess('Successfully saved');
             $this->_redirect('*/*/list');

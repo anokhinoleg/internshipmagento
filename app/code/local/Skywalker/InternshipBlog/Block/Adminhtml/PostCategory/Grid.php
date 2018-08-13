@@ -40,35 +40,17 @@ class Skywalker_InternshipBlog_Block_Adminhtml_PostCategory_Grid extends Mage_Ad
             'index'  => 'name',
         ]);
 
-//        $this->addColumn('short_description', [
-//            'header' => 'Post description',
-//            'type'   => 'text',
-//            'index'  => 'short_description',
-//        ]);
-//
-//        $this->addColumn('status', [
-//            'header' => 'Post status',
-//            'type'   => 'text',
-//            'index'  => 'status',
-//        ]);
-//
-//        $this->addColumn('created_at', [
-//            'header' => 'Publishing date',
-//            'type'   => 'date',
-//            'index'  => 'created_at',
-//        ]);
-//
-//        $this->addColumn('updated_at', [
-//            'header' => 'Publishing update',
-//            'type'   => 'date',
-//            'index'  => 'updated_at',
-//        ]);
-//
-//        $this->addColumn('category_id', [
-//            'header' => 'Category',
-//            'type'   => 'text',
-//            'index'  => 'category_id',
-//        ]);
+        $this->addColumn('description', [
+            'header' => 'Description',
+            'type'   => 'text',
+            'index'  => 'description',
+        ]);
+
+        $this->addColumn('image', [
+            'header' => 'Image',
+            'index' => 'image',
+            'renderer' => 'Skywalker_InternshipBlog_Block_Adminhtml_Renderer_Image'
+        ]);
 
         $this->addExportType('*/*/exportCsv', 'CSV');
         $this->addExportType('*/*/exportExcel', 'Excel XML');
