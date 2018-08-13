@@ -10,7 +10,7 @@ class Skywalker_InternshipBlog_Block_Adminhtml_Renderer_Image extends Mage_Admin
 {
     public function render(Varien_Object $row)
     {
-        $mediaurl=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+        $mediaurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
         $value = $row->getImage();
         return '<img src="'.$mediaurl.'upload'.DS.$value.'"  style="width:200px;height:200px;text-align:center;"/>';
     }
