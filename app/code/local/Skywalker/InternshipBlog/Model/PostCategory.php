@@ -12,4 +12,13 @@ class Skywalker_InternshipBlog_Model_PostCategory extends Mage_Core_Model_Abstra
     {
         $this->_init('internshipblog/postCategory');
     }
+
+    public function getOptionArray()
+    {
+        $array = [];
+        foreach ($this->getCollection() as $item) {
+            $array[$item->getId()] = $item->getName();
+        }
+        return $array;
+    }
 }

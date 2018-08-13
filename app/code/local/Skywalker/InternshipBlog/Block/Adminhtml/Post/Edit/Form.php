@@ -108,7 +108,7 @@ class Skywalker_InternshipBlog_Block_Adminhtml_Post_Edit_Form extends Mage_Admin
             'label'    => 'Category',
             'title'    => 'Category',
             'required' => true,
-            'options' => ['1' => 1, '2' => 2]
+            'options' => $model->getCategory()->getOptionArray()
         ]);
 
         $fieldset->addField('upload_file', 'file', array(

@@ -1,11 +1,39 @@
-@media only screen and (min-width: 771px) {
-  #header-search {
-    display: block;
-    position: absolute;
-    top: -42px;
-    left: 0;
-    width: 25%;
-    height: 50px;
-    padding: 0;
-  }
+
+.category-container ul.category-list li {
+  padding: 0;
+}
+
+.category-container ul.category-list li {
+  margin-top: 5px;
+  height: 30px;
+  text-align: center;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+
+}
+
+.category-container ul.category-list a {
+  flex: 1 1 100%;
+  text-decoration: none;
+}
+
+.category-container ul.category-list a h3 {
+  margin: 0;
+  height: 100%;
+}
+
+div.description {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.post-container ul.post-list li.post-item {
+  margin-top: 2em;
+}
+
+.post-container ul.post-list li.post-item a{
+  text-decoration: none;
 }

@@ -5,18 +5,17 @@
 $categories = $this->getCategories();
 ?>
 <h1>Post's categories</h1>
-<div class="category">
-    <ul>
+<div class="category-container">
+    <ul class="category-list">
     <?php foreach ($categories as $category): ?>
-        <li><a href="
+        <li class="category-item"><a href="
             <?= Mage::getUrl(
                     '*/post/list',
                     [
                         'category'=> $category->getId()
                     ]);
             ?>
-        "><?= $category->getName(); ?></a></li>
+        " class="category-link"><h3><?= $category->getName(); ?></h3></a></li>
     <?php endforeach; ?>
     </ul>
 </div>
-

@@ -13,10 +13,16 @@ class Skywalker_InternshipBlog_Model_Resource_Post_Collection extends Mage_Core_
         $this->_init('internshipblog/post');
     }
 
-//    public function showAuthor()
-//    {
-//        return $this->getSelect()->joinLeft(
-//            array('internship_contact'=> Mage::getSingleton('core/resource')->getTableName('internship/contact')), '`main_table`.`author_id` = `internship_contact`.`id`', array('name')
-//        );
-//    }
+    public function showCategory()
+    {
+        return $this->getSelect()->joinLeft(
+            [
+                'internshipblog_category' => Mage::getSingleton('core/resource')->getTableName('internshipblog/postCategory')
+            ],
+        '`main_table`.`category_id` = `internshipblog_category`.`id`',
+            [
+                'category_name' => 'internshipblog_category.name'
+            ]
+        );
+    }
 }

@@ -21,6 +21,7 @@ class Skywalker_InternshipBlog_Block_Adminhtml_Post_Grid extends Mage_Adminhtml_
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('internshipblog/post')->getCollection();
+        $collection->showCategory();
         $this->setCollection($collection);
         parent::_prepareCollection();
 
@@ -64,10 +65,10 @@ class Skywalker_InternshipBlog_Block_Adminhtml_Post_Grid extends Mage_Adminhtml_
             'index'  => 'updated_at',
         ]);
 
-        $this->addColumn('category_id', [
+        $this->addColumn('category_name', [
             'header' => 'Category',
             'type'   => 'text',
-            'index'  => 'category_id',
+            'index'  => 'category_name',
         ]);
 
         $this->addExportType('*/*/exportCsv', 'CSV');

@@ -12,11 +12,4 @@ class Skywalker_InternshipBlog_Model_Resource_PostCategory_Collection extends Ma
     {
         $this->_init('internshipblog/postCategory');
     }
-
-//    public function showAuthor()
-//    {
-//        return $this->getSelect()->joinLeft(
-//            array('internship_contact'=> Mage::getSingleton('core/resource')->getTableName('internship/contact')), '`main_table`.`author_id` = `internship_contact`.`id`', array('name')
-//        );
-//    }
 }

@@ -4,21 +4,35 @@
 <?php
     $posts = $this->getPosts();
     $category = $this->getCategory();
+    $imgUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'upload' . DS . $category->getImage();
 ?>
 <h1><?= $category->getName(); ?> Category</h1>
-<p><?= $category->getDescription(); ?> <img src="<?= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'upload' . DS . $category->getImage(); ?>" width="200" height="200" alt=""></p>
-
+<div class="description">
+    <p><?= $category->getDescription(); ?></p>
+    <?php if ($category->getImage()) : ?>
+        <img src="<?= $imgUrl; ?>" width="200" height="200" alt="">
+    <?php endif; ?>
+</div>
 <h2>Posts</h2>
-<ul>
-    <?php foreach ($posts as $post) : ?>
-        <li><a href="
+<div class="post-container">
+    <ul class="post-list">
+        <?php foreach ($posts as $post) : ?>
+            <li class="post-item">
+                <a href="
             <?= Mage::getUrl(
                     '*/*/show',
                     [
                         'id' => $post->getId()
                     ]);
-            ?>
-            "><?= $post->getShortDescription(); ?></a></li>
-    <?php endforeach; ?>
-</ul>
+                ?>
+            ">
+                    <div>
+                        <h2><?= $post->getName(); ?></h2>
+                        <p><?= $post->getShortDescription(); ?></p>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
 

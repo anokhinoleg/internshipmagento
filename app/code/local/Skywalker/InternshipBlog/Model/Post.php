@@ -12,4 +12,9 @@ class Skywalker_InternshipBlog_Model_Post extends Mage_Core_Model_Abstract
     {
         $this->_init('internshipblog/post');
     }
+
+    public function getCategory()
+    {
+        return Mage::getModel('internshipblog/postCategory')->load($this->getCategoryId());
+    }
 }

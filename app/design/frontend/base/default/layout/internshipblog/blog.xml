@@ -15,4 +15,14 @@
             <block type="internshipblog/post_show" name="internshipblog" template="skywalker/internshipblog/post/show.phtml"/>
         </reference>
     </internshipblog_post_show>
+    <default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/internshipblog_styles.css</file>
+                <params/>
+                <if><![CDATA[<!--[]><!-->]]></if>
+            </action>
+        </reference>
+    </default>
 </layout>
