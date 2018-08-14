@@ -14,9 +14,12 @@
     <?php endif; ?>
 </div>
 <h2>Posts</h2>
+
+
 <div class="post-container">
     <ul class="post-list">
-        <?php foreach ($posts as $post) : ?>
+        <?php $_odd = ''; ?>
+        <?php foreach ($this->getCollection() as $post) : ?>
             <li class="post-item">
                 <a href="
             <?= Mage::getUrl(
@@ -34,5 +37,7 @@
             </li>
         <?php endforeach; ?>
     </ul>
+    <?php echo $this->getPagerHtml(); ?>
 </div>
+
 

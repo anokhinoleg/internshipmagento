@@ -15,6 +15,11 @@
             <block type="internshipblog/post_show" name="internshipblog" template="skywalker/internshipblog/post/show.phtml"/>
         </reference>
     </internshipblog_post_show>
+    <!--<internshipblog_post_pagination>-->
+        <!--<reference name="content">-->
+            <!--<block name="collection_post" type="internshipblog/post_list" template="skywalker/internshipblog/post/list.phtml"/>-->
+        <!--</reference>-->
+    <!--</internshipblog_post_pagination>-->
     <default>
         <reference name="head">
             <action method="addItem">
