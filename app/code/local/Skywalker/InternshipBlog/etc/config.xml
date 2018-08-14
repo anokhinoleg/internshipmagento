@@ -54,6 +54,16 @@
                 </setup>
             </internshipblog_setup>
         </resources>
+        <events>
+            <post_save_before>
+                <observers>
+                    <observer_to_update_date>
+                        <class>internshipblog/observer</class>
+                        <method>updateDate</method>
+                    </observer_to_update_date>
+                </observers>
+            </post_save_before>
+        </events>
     </global>
     <admin>
         <routers>

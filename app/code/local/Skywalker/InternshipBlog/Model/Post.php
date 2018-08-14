@@ -8,6 +8,14 @@
 
 class Skywalker_InternshipBlog_Model_Post extends Mage_Core_Model_Abstract
 {
+
+    /**
+    * Prefix of model events names
+    *
+    * @var string
+    */
+    protected $_eventPrefix = 'post';
+
     protected function _construct()
     {
         $this->_init('internshipblog/post');
